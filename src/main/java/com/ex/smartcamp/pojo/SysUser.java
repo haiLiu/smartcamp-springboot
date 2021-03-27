@@ -3,7 +3,9 @@ package com.ex.smartcamp.pojo;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Table(name = "sys_user")
 public class SysUser {
@@ -89,6 +91,13 @@ public class SysUser {
      */
     @Column(name = "del_flag")
     private Byte delFlag;
+
+    // 非数据库字段
+    private String deptName;
+    // 非数据库字段
+    private String roleNames;
+    // 非数据库字段
+    private List<SysUserRole> userRoles = new ArrayList<>();
 
     /**
      * 获取编号
@@ -358,5 +367,24 @@ public class SysUser {
      */
     public void setDelFlag(Byte delFlag) {
         this.delFlag = delFlag;
+    }
+
+    public String getDeptName() {
+        return deptName;
+    }
+    public void setDeptName(String deptName) {
+        this.deptName = deptName;
+    }
+    public String getRoleNames() {
+        return roleNames;
+    }
+    public void setRoleNames(String roleNames) {
+        this.roleNames = roleNames;
+    }
+    public List<SysUserRole> getUserRoles() {
+        return userRoles;
+    }
+    public void setUserRoles(List<SysUserRole> userRoles) {
+        this.userRoles = userRoles;
     }
 }

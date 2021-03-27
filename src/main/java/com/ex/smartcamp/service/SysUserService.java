@@ -6,6 +6,10 @@ import java.util.List;
 import java.util.Set;
 
 public interface SysUserService {
+
+    int save(SysUser record);
+
+    SysUser findById(String id);
     /*
     * 查询所有用户
     * */
