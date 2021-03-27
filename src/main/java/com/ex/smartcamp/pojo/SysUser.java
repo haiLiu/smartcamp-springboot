@@ -27,7 +27,7 @@ public class SysUser {
      * 用户状态（1：正常，0：暂停）
      */
     @Column(name = "status")
-    private String status;
+    private Byte status;
 
     /**
      * 用户昵称
@@ -83,11 +83,11 @@ public class SysUser {
         this.password = password;
     }
 
-    public String getStatus() {
+    public Byte getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Byte status) {
         this.status = status;
     }
 
