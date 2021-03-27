@@ -92,4 +92,5 @@ public class SysLoginController {
 		JwtAuthenticatioToken token = SecurityUtils.login(request, username, password, authenticationManager);
 		return HttpResult.ok(token);
 	}
+
 }

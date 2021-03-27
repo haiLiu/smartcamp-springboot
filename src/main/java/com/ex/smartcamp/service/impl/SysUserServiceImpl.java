@@ -30,7 +30,7 @@ public class SysUserServiceImpl implements SysUserService {
     @Override
     public SysUser findByName(String name) {
         Example example = new Example(SysUser.class);
-        example.createCriteria().andEqualTo("username", name);
+        example.createCriteria().andEqualTo("name", name);
         return sysUserMapper.selectOneByExample(example);
     }
 

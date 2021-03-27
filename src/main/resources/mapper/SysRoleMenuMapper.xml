@@ -2,9 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ex.smartcamp.mapper.SysRoleMenuMapper">
   <resultMap id="BaseResultMap" type="com.ex.smartcamp.pojo.SysRoleMenu">
-    <!--
-      WARNING - @mbg.generated
-    -->
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="role_id" jdbcType="BIGINT" property="roleId" />
     <result column="menu_id" jdbcType="BIGINT" property="menuId" />
