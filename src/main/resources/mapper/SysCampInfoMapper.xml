@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ex.smartcamp.mapper.SysCampInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.ex.smartcamp.pojo.SysCampInfo" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="admin_user_id" property="adminUserId" jdbcType="INTEGER" />
+    <result column="album" property="album" jdbcType="VARCHAR" />
+    <result column="license" property="license" jdbcType="VARCHAR" />
+    <result column="licenseCode" property="licensecode" jdbcType="VARCHAR" />
+    <result column="openTime" property="opentime" jdbcType="VARCHAR" />
+    <result column="openObject" property="openobject" jdbcType="VARCHAR" />
+    <result column="campLocation" property="camplocation" jdbcType="VARCHAR" />
+    <result column="profit" property="profit" jdbcType="VARCHAR" />
+    <result column="features" property="features" jdbcType="VARCHAR" />
+    <result column="capacity" property="capacity" jdbcType="INTEGER" />
+    <result column="isAdvertisement" property="isadvertisement" jdbcType="TINYINT" />
+    <result column="isRecommend" property="isrecommend" jdbcType="TINYINT" />
+    <result column="create_by" property="createBy" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="last_update_by" property="lastUpdateBy" jdbcType="VARCHAR" />
+    <result column="last_update_time" property="lastUpdateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+</mapper>
