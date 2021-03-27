@@ -23,7 +23,7 @@ public class SysMenuServiceImpl implements SysMenuService {
 		if(userName == null || "".equals(userName) || SysConstants.ADMIN.equalsIgnoreCase(userName)) {
 			return sysMenuMapper.selectAll();
 		}
-//		return sysMenuMapper.findByUserName(userName);
+		return sysMenuMapper.findByUserName(userName);
 	}
 
 

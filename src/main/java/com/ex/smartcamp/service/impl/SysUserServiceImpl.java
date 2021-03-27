@@ -3,6 +3,7 @@ package com.ex.smartcamp.service.impl;
 import com.ex.smartcamp.mapper.SysUserMapper;
 import com.ex.smartcamp.pojo.SysMenu;
 import com.ex.smartcamp.pojo.SysUser;
+import com.ex.smartcamp.service.SysMenuService;
 import com.ex.smartcamp.service.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,9 @@ public class SysUserServiceImpl implements SysUserService {
 
     @Autowired
     private SysUserMapper sysUserMapper;
+
+    @Autowired
+    private SysMenuService sysMenuService;
 
     @Override
     public List<SysUser> findAll() {
