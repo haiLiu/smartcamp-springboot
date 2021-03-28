@@ -3,6 +3,7 @@ package com.ex.smartcamp.pojo;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -93,10 +94,13 @@ public class SysUser {
     private Byte delFlag;
 
     // 非数据库字段
-    private String deptName;
-    // 非数据库字段
+    @Transient
+    private String campName;
+
+    @Transient
     private String roleNames;
-    // 非数据库字段
+
+    @Transient
     private List<SysUserRole> userRoles = new ArrayList<>();
 
     /**
@@ -369,12 +373,14 @@ public class SysUser {
         this.delFlag = delFlag;
     }
 
-    public String getDeptName() {
-        return deptName;
+    public String getCampName() {
+        return campName;
     }
-    public void setDeptName(String deptName) {
-        this.deptName = deptName;
+
+    public void setCampName(String campName) {
+        this.campName = campName;
     }
+
     public String getRoleNames() {
         return roleNames;
     }
