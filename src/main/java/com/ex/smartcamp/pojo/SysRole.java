@@ -11,7 +11,7 @@ public class SysRole {
      * 编号
      */
     @Id
-    private Long id;
+    private String id;
 
     /**
      * 角色名称
@@ -58,7 +58,7 @@ public class SysRole {
      *
      * @return id - 编号
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
@@ -67,7 +67,7 @@ public class SysRole {
      *
      * @param id 编号
      */
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

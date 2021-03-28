@@ -7,6 +7,8 @@ import java.util.Set;
 
 public interface SysUserService {
 
+    int insert(SysUser record);
+
     int save(SysUser record);
 
     SysUser findById(String id);

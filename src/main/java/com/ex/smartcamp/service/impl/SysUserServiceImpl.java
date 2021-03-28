@@ -1,12 +1,15 @@
 package com.ex.smartcamp.service.impl;
 
+import com.ex.smartcamp.mapper.SysRoleMapper;
 import com.ex.smartcamp.mapper.SysUserMapper;
 import com.ex.smartcamp.mapper.SysUserRoleMapper;
 import com.ex.smartcamp.pojo.SysMenu;
+import com.ex.smartcamp.pojo.SysRole;
 import com.ex.smartcamp.pojo.SysUser;
 import com.ex.smartcamp.pojo.SysUserRole;
 import com.ex.smartcamp.service.SysMenuService;
 import com.ex.smartcamp.service.SysUserService;
+import org.n3r.idworker.Sid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,14 +26,43 @@ public class SysUserServiceImpl implements SysUserService {
     private SysUserMapper sysUserMapper;
 
     @Autowired
+    private SysUserRoleMapper sysUserRoleMapper;
+
+    @Autowired
+    private SysRoleMapper sysRoleMapper;
+
+    @Autowired
     private SysMenuService sysMenuService;
 
     @Autowired
-    private SysUserRoleMapper sysUserRoleMapper;
+    private Sid sid;
 
     @Override
     public List<SysUser> findAll() {
         return sysUserMapper.selectAll();
+    }
+
+    @Transactional
+    @Override
+    public int insert(SysUser record){
+        int insert2 = sysUserMapper.insert(record);
+
+        SysRole sysRole = new SysRole();
+        sysRole.setId(sid.nextShort());
+        sysRole.setName("普通角色");
+        sysRole.setDelFlag((byte) 0);
+        int insert1 = sysRoleMapper.insert(sysRole);
+
+        SysUserRole sysUserRole = new SysUserRole();
+        sysUserRole.setId(sid.nextShort());
+        sysUserRole.setUserId(record.getId());
+        sysUserRole.setRoleId(sysRole.getId());
+        int insert = sysUserRoleMapper.insert(sysUserRole);
+
+        if(insert2==1 && insert1==1 && insert==1){
+            return 1;
+        }
+        return 0;
     }
 
     @Transactional
